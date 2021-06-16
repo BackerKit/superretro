@@ -12,7 +12,7 @@ class App extends React.Component {
 
     componentDidMount() {
         console.log('mount yo');
-       store.dispatch(getCards(this.props));
+       // store.dispatch(getCards(this.props));
     }
 
     render () {
