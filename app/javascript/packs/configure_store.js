@@ -2,7 +2,8 @@ import {applyMiddleware, createStore} from "redux";
 import thunk from 'redux-thunk';
 
 const initialState = {
-    cards: {}
+    cards: {},
+    exampleInitialState: "hi mom"
 };
 
 function rootReducer(state, action) {

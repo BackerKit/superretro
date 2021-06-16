@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b38cb1-8e1c-4c52-8594-fe1d3fd1ecbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/cards_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/comments_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/packs/app.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/packs/card_actions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/packs/configure_store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/card.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/app.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/configure_store.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/configure_store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1621492805143</updated>
       <workItem from="1621492808104" duration="6020000" />
+      <workItem from="1623873034160" duration="439000" />
     </task>
     <servers />
   </component>
@@ -180,5 +174,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

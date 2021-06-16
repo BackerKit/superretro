@@ -12,7 +12,6 @@ class App extends React.Component {
 
     componentDidMount() {
         console.log('mount yo');
-       // store.dispatch(getCards(this.props));
     }
 
     render () {
@@ -23,7 +22,7 @@ class App extends React.Component {
                 <div>App {this.props.name}!</div>
                 <div>Count: {this.state.count}</div>
                 <button onClick={this.increment}>add to count</button>
-
+                <div>Example initial state: {this.props.initialState} </div>
             </div>
         );
 
@@ -44,7 +43,8 @@ App.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        cards: state.cards
+        cards: state.cards,
+        initialState: state.exampleInitialState
     }
 }
 
