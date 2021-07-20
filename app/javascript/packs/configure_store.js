@@ -1,15 +1,21 @@
 import {applyMiddleware, createStore} from "redux";
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension'
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
+
+
 
 const initialState = {
     exampleInitialState: "hi mom I am redux",
-    cards: {},
+    cards: [],
 };
 
 function rootReducer(state, action) {
     console.log('called rootReducer');
     console.log(state);
     console.log(action);
+
+    const newState = {...state}; // TODO should be a deep clone
 
     switch(action.type){
         // case 'GET_CARDS':
@@ -18,12 +24,18 @@ function rootReducer(state, action) {
         //     }
         //     return new_state;
         //     break;
-        case 'cardAction/exampleType':
-            const newState = {...state}; // TODO should be a deep clone
+        case "cards/cardsLoaded":
+            console.log('cards/cardsLoaded')
+            newState['cards'] = action.cards
+            return newState;
+            break;
 
+        case 'cardAction/exampleType':
             newState['exampleText'] = action.data
             return newState;
             break;
+
+        debugger;
 
         default: return state;
     }
@@ -31,6 +43,6 @@ function rootReducer(state, action) {
 }
 
 export default function configureStore() {
-    const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+    const store = createStore(rootReducer, initialState, composedEnhancer);
     return store;
 }

@@ -2,6 +2,13 @@ import React from "react";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import actions from './card_actions';
+import axios from "axios";
+
+export async function fetchTodos(dispatch, getState) {
+    const response = await axios.get("cards")
+    dispatch({ type: 'cards/cardsLoaded', payload: response.cards })
+}
+
 
 class App extends React.Component {
     constructor(props) {
@@ -39,6 +46,15 @@ class App extends React.Component {
 
                 <div>ExampleText from this.props.exampleText: {this.props.exampleText} </div>
                 <div>ExampleText from this.state.exampleText: {this.state.exampleText} </div>
+
+                <hr/>
+                <div>
+                    <ul>
+                        {this.props.cards.map(function (card) {
+                            return <li key={card.id}>{card.description}</li>
+                        })}
+                    </ul>
+                </div>
             </div>
         );
     }

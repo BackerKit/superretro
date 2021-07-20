@@ -10,6 +10,15 @@ import { Provider } from 'react-redux';
 const store = configureStore();
 
 
+import axios from "axios";
+async function fetchCards(dispatch, getState) {
+    console.log('fetching cards')
+    const response = await axios.get("cards")
+    let payload = response.data;
+    dispatch({ type: 'cards/cardsLoaded', cards: payload })
+}
+store.dispatch(fetchCards)
+
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

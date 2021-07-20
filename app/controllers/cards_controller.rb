@@ -5,7 +5,11 @@ class CardsController < ApplicationController
   end
 
   def index
-    render json: Card.all.map(&:to_json)
+    Card.find_or_create_by!(description: 'I am card 1', votes: 10)
+    Card.find_or_create_by!(description: 'I am card 2', votes: 5)
+    Card.find_or_create_by!(description: 'I am card 3', votes: 0)
+    Card.find_or_create_by!(description: 'I am card 4', votes: -5)
+    render json: Card.all#.map(&:to_json)
   end
 
   def update
